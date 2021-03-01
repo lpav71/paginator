@@ -7,9 +7,9 @@ class Paginator
     public $out;    //Выходной поток
     public $file;   //Текущее имя исполняемого файла. Нужно писать так - $paginator->file = basename(__FILE__);
 
-    private $str_pag;
+    private $str_pag; // Количество страниц для пагинации
 
-    public function prepare($pdo)
+    public function prepare($pdo)  //$pdo - экземляр драйвера БД
     {
         // Пагинация
 
