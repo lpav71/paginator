@@ -58,11 +58,13 @@ class Paginator
 
     public function viewPaginator()
     {
-        $file = $this->file;
-        for ($i = 1; $i <= $this->str_pag; $i++) {
-            echo "<div class=\"btn-group\" role=\"group\" aria-label=\"Basic example\">";
-            echo "<a href=$file?page=" . $i . " class='btn btn-outline-primary'>" . $i . "</a>";
-            echo "</div";
-        }
+        $file = $this->file; ?>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <?php
+            for ($i = 1; $i <= $this->str_pag; $i++) {  ?>
+                <a href="<?= $file ?>?page=<?= $i ?>" class='btn btn-outline-primary'> <?= $i ?> </a>
+            <?php
+            }
+            echo '</div>';
     }
 }
