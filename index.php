@@ -1,11 +1,16 @@
 <?php
-include 'Paginator.php';
+include 'app\Paginator.php';
 include 'db.php';
+use app\Paginator;
 
 $paginator = new Paginator();
-$paginator->qtyrec = 3;
+$paginator->qtyrec = 5;
 $paginator->table = 'region';
 $paginator->file = basename(__FILE__);
+$paginator->user = "root";
+$paginator->pass = "root";
+$paginator->database = "bd";
+$paginator->prepare($pdo);
 $paginator->prepare($pdo);
 
 ?>
