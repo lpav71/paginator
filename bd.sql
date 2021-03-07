@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS `locality` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `region_id_foreign` (`region_id`),
-  CONSTRAINT `region_id_foreign` FOREIGN KEY (`region_id`) REFERENCES `region` (`id`)
+  CONSTRAINT `region_id_foreign` FOREIGN KEY (`region_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Дамп данных таблицы bd.locality: ~6 rows (приблизительно)
+-- Дамп данных таблицы bd.locality: ~7 rows (приблизительно)
 /*!40000 ALTER TABLE `locality` DISABLE KEYS */;
 INSERT INTO `locality` (`id`, `region_id`, `name`) VALUES
 	(1, 1, 'Краснодар'),
@@ -43,13 +43,13 @@ CREATE TABLE IF NOT EXISTS `region` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Дамп данных таблицы bd.region: ~12 rows (приблизительно)
+-- Дамп данных таблицы bd.region: ~17 rows (приблизительно)
 /*!40000 ALTER TABLE `region` DISABLE KEYS */;
 INSERT INTO `region` (`id`, `name`) VALUES
-	(1, 'Россия'),
-	(2, 'Казахстан'),
+	(1, 'Россия 000'),
+	(2, 'Казахстан 111'),
 	(3, 'Белоруссия'),
 	(4, 'Башкирия'),
 	(13, 'Япония'),
@@ -59,7 +59,12 @@ INSERT INTO `region` (`id`, `name`) VALUES
 	(22, 'США'),
 	(23, 'Польша'),
 	(24, 'Чехия'),
-	(25, 'Словения');
+	(25, 'Словения'),
+	(30, 'Ирак'),
+	(31, 'Иран'),
+	(32, 'Судан'),
+	(33, 'Боливия'),
+	(34, 'Чили');
 /*!40000 ALTER TABLE `region` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
