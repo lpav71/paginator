@@ -51,7 +51,7 @@ class Paginator
 
 
         // Запрос и вывод записей
-        $query = 'SELECT * FROM ' . $this->table . ' LIMIT ' . $art . ',' . $this->qtyrec;
+        $query = 'SELECT * FROM ' . $this->table . ' LIMIT ' . $art . ', ' . $this->qtyrec;
         $stmt = $pdo->query($query);
         $this->out = $stmt->fetchAll();
     }
